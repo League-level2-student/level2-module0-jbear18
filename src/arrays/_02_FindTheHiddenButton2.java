@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 
 import org.jointheleague.graphical.robot.Robot;
 
-public class _02_FindTheHiddenButton implements ActionListener{
+public class _02_FindTheHiddenButton2 implements ActionListener{
 	JFrame window;
 	JPanel panel;
 	
@@ -26,7 +26,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 	//2 create an int variable called hiddenButton
 	int hiddenButton;
 	public static void main(String[] args) {
-		new _02_FindTheHiddenButton().start();
+		new _02_FindTheHiddenButton2().start();
 	}
 	
 	public void start() {
@@ -40,35 +40,25 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//4. Initialize the array of JButtons to be the size of the int created in step 3
 	buttons= new JButton[size];
 		//5. Make a for loop to iterate through the JButton array
-	for (int i = 0; i < buttons.length; i++) {
-		buttons[i]= new JButton();
-		//6. initialize each JButton in the array
+			//6. initialize each JButton in the array
+			//7. add the ActionListener to each JButton
+			//8. add each JButton to the panel
 		
-		//7. add the ActionListener to each JButton
-buttons[i].addActionListener(this);
-		//8. add each JButton to the panel
-panel.add(buttons[i]);
-		
-	}
-			
 		//9 add the panel to the window
-		window.add(panel);
+		
 		//10. call setExtendedState(JFrame.MAXIMIZED_BOTH) on your JFrame object.
-		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		
 		//11. set the JFrame to visible.
-		window.setVisible(true);
 		
 		//12. Give the user the instructions for the game.
-		JOptionPane.showMessageDialog(null, "Find the hidden button. You have a second to see the button that says ME. Find it as quick as possible and press on it! Have fun and good luck!!! :)");
+		
 		//13. initialize the hiddenButton variable to a random number less than the int created int step 3
-		Random random= new Random();
-		hiddenButton= random.nextInt(size);
-	
+		
 		//14. Set the text of the JButton located at hiddenButton the read "ME"
-buttons[hiddenButton].setText("ME");
+
 		//15. Use Thread.sleep(100); to pause the program.
 		//    Surround it with a try/catch
-
+		
 		//16. Set the text of the JButton located at hiddenButton to be blank.
 		
 	}
@@ -79,12 +69,6 @@ buttons[hiddenButton].setText("ME");
 		
 		//17. if the hiddenButton is clicked, tell the user that they win.
 		
-			JOptionPane.showMessageDialog(null, "Congratulations, you have won. ");
-		
 		//18. else tell them to try again
-		
-		JOptionPane.showMessageDialog(null, "Sorry, wrong button. Try again.");	
-		JOptionPane.showMessageDialog(null, "Your mom is mad at you because you failed. A= average, B=bad, c=catastrophical, d= death, f= f***");
-		
 	}
 }
