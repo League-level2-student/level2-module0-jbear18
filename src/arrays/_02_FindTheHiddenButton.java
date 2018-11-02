@@ -68,9 +68,14 @@ panel.add(buttons[i]);
 buttons[hiddenButton].setText("ME");
 		//15. Use Thread.sleep(100); to pause the program.
 		//    Surround it with a try/catch
-
+try {
+	Thread.sleep(30);
+} catch (InterruptedException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
 		//16. Set the text of the JButton located at hiddenButton to be blank.
-		
+buttons[hiddenButton].setText("");
 	}
 
 	@Override
@@ -79,12 +84,15 @@ buttons[hiddenButton].setText("ME");
 		
 		//17. if the hiddenButton is clicked, tell the user that they win.
 		
+		if(buttons[hiddenButton]	==buttonClicked ) {
+			
 			JOptionPane.showMessageDialog(null, "Congratulations, you have won. ");
+		}else {
 		
 		//18. else tell them to try again
 		
 		JOptionPane.showMessageDialog(null, "Sorry, wrong button. Try again.");	
 		JOptionPane.showMessageDialog(null, "Your mom is mad at you because you failed. A= average, B=bad, c=catastrophical, d= death, f= f***");
-		
+		}
 	}
 }
